@@ -1,0 +1,22 @@
+[
+  {
+    "Nom": "Cloud",
+    "MotDePasse": "1234",
+    "Balance": 40
+  },
+  {
+    "Nom": "Bob",
+    "MotDePasse": "1234",
+    "Balance": 140
+  },
+  {
+    "Nom": "Tifa",
+    "MotDePasse": "1234",
+    "Balance": 0
+  },
+  {
+    "Nom": "Zeke",
+    "MotDePasse": "1234",
+    "Balance": 0
+  }
+]

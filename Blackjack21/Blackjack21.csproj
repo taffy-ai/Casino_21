@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9433A0B9-4A50-46E3-A71D-A5C8A606B3DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Blackjack21</RootNamespace>
+    <AssemblyName>Blackjack21</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.3\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.3\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.3\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Card.cs" />
+    <Compile Include="Business\Deck.cs" />
+    <Compile Include="Business\Joueur.cs" />
+    <Compile Include="Data\GestionJoueurs.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPlay.Designer.cs">
+      <DependentUpon>FormPlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormTopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormTopUp.Designer.cs">
+      <DependentUpon>FormTopUp.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPlay.resx">
+      <DependentUpon>FormPlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormTopUp.resx">
+      <DependentUpon>FormTopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackjack-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_playhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_registerhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_loginhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameBoardBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackJackTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d11.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d13.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h02.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h03.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h04.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h05.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h07.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h08.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h09.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h10.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h11.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h13.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s02.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s03.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s04.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s05.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s07.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s08.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s09.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s10.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s11.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s13.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b1fv.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b2fv.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c02.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c03.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c04.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c05.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c07.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c08.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c09.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c10.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c11.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c13.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d02.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d03.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d04.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d05.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d06.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d07.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d08.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d09.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d10.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\casino_add_funds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mastercard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\american.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5ChipHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10Chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10ChipDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10ChipHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25Chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25ChipDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25ChipHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50Chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50ChipDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50ChipHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100Chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100ChipDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100ChipHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1Chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1ChipDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1ChipHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5Chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5ChipDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firework.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jazz-music.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lose.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
